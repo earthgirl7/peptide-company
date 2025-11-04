@@ -4,7 +4,6 @@ import { FormEvent, useState } from "react";
 
 export default function FinalCTA() {
   const [email, setEmail] = useState("");
-  const [firstName, setFirstName] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState("");
 
@@ -22,18 +21,16 @@ export default function FinalCTA() {
         await new Promise((resolve) => setTimeout(resolve, 1000));
         setSubmitMessage("Thank you! You're on the waitlist.");
         setEmail("");
-        setFirstName("");
       } else {
         const response = await fetch(formAction, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email, firstName }),
+          body: JSON.stringify({ email }),
         });
 
         if (response.ok) {
           setSubmitMessage("Thank you! You're on the waitlist.");
           setEmail("");
-          setFirstName("");
         } else {
           setSubmitMessage("Something went wrong. Please try again.");
         }
@@ -49,75 +46,49 @@ export default function FinalCTA() {
   return (
     <section
       id="waitlist"
-      className="py-16 md:py-20 bg-ink"
+      className="py-16 md:py-20 px-6 md:px-8"
     >
-      <div className="container mx-auto px-4 max-w-2xl text-center">
-        <h2 className="text-3xl md:text-4xl font-medium text-whisper mb-8">
-          Join the Founding Cohort Waitlist
+      <div className="max-w-xl mx-auto text-center">
+        <h2 className="text-2xl md:text-3xl font-light text-ink mb-3">
+          Not ready to apply?
         </h2>
 
-        <form onSubmit={handleSubmit} className="space-y-4 mb-6">
-          <div>
-            <label htmlFor="firstName" className="sr-only">
-              First Name
-            </label>
-            <input
-              type="text"
-              id="firstName"
-              name="firstName"
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
-              placeholder="First Name"
-              className="w-full px-4 py-3 rounded-lg text-ink bg-white border border-border focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
-              required
-            />
-          </div>
+        <p className="text-stone mb-8">
+          Join the waitlist for early cohort access and updates
+        </p>
 
-          <div>
-            <label htmlFor="email" className="sr-only">
-              Email Address
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Email Address"
-              className="w-full px-4 py-3 rounded-lg text-ink bg-white border border-border focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
-              required
-              aria-required="true"
-            />
-          </div>
+        <form onSubmit={handleSubmit} className="flex gap-3">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Email"
+            className="flex-1 px-4 py-3 text-ink bg-whisper border border-border focus:outline-none focus:ring-2 focus:ring-ink focus:border-transparent"
+            required
+            aria-required="true"
+          />
 
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-accent text-ink font-medium px-8 py-4 rounded-lg text-lg hover:bg-accent/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-ink"
+            className="px-8 py-3 bg-ink text-whisper text-sm tracking-[0.2em] uppercase hover:bg-stone transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             aria-label="Subscribe to the waitlist"
           >
-            {isSubmitting ? "Submitting..." : "→ Subscribe"}
+            {isSubmitting ? "..." : "Subscribe"}
           </button>
         </form>
 
         {submitMessage && (
           <p
-            className="text-whisper text-lg mb-6"
+            className="text-ink text-sm mt-4"
             role="status"
             aria-live="polite"
           >
             {submitMessage}
           </p>
         )}
-
-        <p className="text-whisper text-lg mb-2">
-          Early waitlist members get priority access and founding member pricing.
-        </p>
-
-        <p className="text-sm text-stone">
-          We respect your privacy. Unsubscribe anytime.<br />
-          No spam, just updates on cohort launches.
-        </p>
       </div>
     </section>
   );
