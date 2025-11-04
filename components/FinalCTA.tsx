@@ -49,10 +49,10 @@ export default function FinalCTA() {
   return (
     <section
       id="waitlist"
-      className="py-16 md:py-20 bg-gradient-to-b from-blue-600 to-blue-700 dark:from-blue-800 dark:to-blue-900"
+      className="py-16 md:py-20 bg-ink"
     >
       <div className="container mx-auto px-4 max-w-2xl text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
+        <h2 className="text-3xl md:text-4xl font-medium text-whisper mb-8">
           Join the Founding Cohort Waitlist
         </h2>
 
@@ -68,7 +68,7 @@ export default function FinalCTA() {
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
               placeholder="First Name"
-              className="w-full px-4 py-3 rounded-lg text-gray-900 dark:text-white bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent"
+              className="w-full px-4 py-3 rounded-lg text-ink bg-white border border-border focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
               required
             />
           </div>
@@ -84,7 +84,7 @@ export default function FinalCTA() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Email Address"
-              className="w-full px-4 py-3 rounded-lg text-gray-900 dark:text-white bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent"
+              className="w-full px-4 py-3 rounded-lg text-ink bg-white border border-border focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
               required
               aria-required="true"
             />
@@ -93,7 +93,7 @@ export default function FinalCTA() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-white text-blue-600 font-semibold px-8 py-4 rounded-lg text-lg hover:bg-gray-100 transition-colors disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-600"
+            className="w-full bg-accent text-ink font-medium px-8 py-4 rounded-lg text-lg hover:bg-accent/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-ink"
             aria-label="Subscribe to the waitlist"
           >
             {isSubmitting ? "Submitting..." : "→ Subscribe"}
@@ -102,7 +102,7 @@ export default function FinalCTA() {
 
         {submitMessage && (
           <p
-            className="text-white text-lg mb-6"
+            className="text-whisper text-lg mb-6"
             role="status"
             aria-live="polite"
           >
@@ -110,11 +110,11 @@ export default function FinalCTA() {
           </p>
         )}
 
-        <p className="text-blue-100 dark:text-blue-200 text-lg mb-2">
+        <p className="text-whisper text-lg mb-2">
           Early waitlist members get priority access and founding member pricing.
         </p>
 
-        <p className="text-sm text-blue-200 dark:text-blue-300">
+        <p className="text-sm text-stone">
           We respect your privacy. Unsubscribe anytime.<br />
           No spam, just updates on cohort launches.
         </p>

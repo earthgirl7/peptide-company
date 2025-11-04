@@ -7,31 +7,31 @@ export default function Peptides() {
   ];
 
   return (
-    <section className="py-16 md:py-20 bg-white dark:bg-gray-800">
+    <section className="py-16 md:py-20 bg-white">
       <div className="container mx-auto px-4 max-w-4xl">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-12">
+        <h2 className="text-3xl md:text-4xl font-medium text-center text-ink mb-12">
           First Cohorts Focus On
         </h2>
         <div className="grid md:grid-cols-2 gap-6 mb-10">
           {peptides.map((peptide, index) => (
             <div
               key={index}
-              className="p-6 bg-gray-50 dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700"
+              className="p-6 bg-whisper rounded-lg border border-border"
             >
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+              <h3 className="text-xl font-medium text-ink mb-2">
                 {peptide.name}
               </h3>
-              <p className="text-gray-700 dark:text-gray-300">
+              <p className="text-stone">
                 {peptide.description}
               </p>
             </div>
           ))}
         </div>
         <div className="text-center space-y-2">
-          <p className="text-lg text-gray-700 dark:text-gray-300">
+          <p className="text-lg text-stone">
             All sourced from FDA-registered compounding pharmacies.
           </p>
-          <p className="text-lg text-gray-700 dark:text-gray-300">
+          <p className="text-lg text-stone">
             All administered under physician supervision.
           </p>
         </div>

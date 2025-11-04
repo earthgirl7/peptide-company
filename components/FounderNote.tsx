@@ -1,25 +1,25 @@
 export default function FounderNote() {
   return (
-    <section className="py-16 md:py-20 bg-gray-50 dark:bg-gray-900">
+    <section className="py-16 md:py-20 bg-whisper">
       <div className="container mx-auto px-4 max-w-3xl">
         <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
           <div className="flex-shrink-0">
-            <div className="w-32 h-32 md:w-40 md:h-40 bg-gray-300 dark:bg-gray-700 rounded-lg flex items-center justify-center text-gray-500 dark:text-gray-400">
+            <div className="w-32 h-32 md:w-40 md:h-40 bg-border rounded-lg flex items-center justify-center text-stone">
               Photo
             </div>
           </div>
           <div className="flex-1">
-            <blockquote className="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-6 italic">
+            <blockquote className="text-lg md:text-xl text-stone mb-6 italic">
               &quot;I&apos;m building this because the peptide space needs structure.
               Millions are experimenting. Almost no one is collecting data.
               This platform bridges responsible research with real-world use.&quot;
             </blockquote>
             <div className="flex items-center gap-4">
               <div>
-                <p className="font-bold text-gray-900 dark:text-white">
+                <p className="font-medium text-ink">
                   Jesse Schmidt
                 </p>
-                <p className="text-gray-600 dark:text-gray-400">
+                <p className="text-stone">
                   Founder, Neuroscience Background
                 </p>
               </div>
@@ -27,7 +27,7 @@ export default function FounderNote() {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 transition-colors"
+                className="text-accent hover:text-accent/80 transition-colors"
                 aria-label="Connect with Jesse Schmidt on LinkedIn"
               >
                 <svg
