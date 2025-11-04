@@ -4,6 +4,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -36,12 +37,12 @@ export default function Navigation() {
         `}
       >
         {/* Logo/Wordmark - minimal, tracked */}
-        <a
+        <Link
           href="/"
           className="text-xs tracking-[0.3em] uppercase text-ink hover:opacity-70 transition-opacity"
         >
           The Peptide Company
-        </a>
+        </Link>
       </div>
     </nav>
   )
