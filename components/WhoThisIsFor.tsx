@@ -26,9 +26,21 @@ export default function WhoThisIsFor() {
             </li>
           ))}
         </ul>
-        <p className="text-xl md:text-2xl font-medium text-center text-ink">
+        <p className="text-xl md:text-2xl font-medium text-center text-ink mb-8">
           This is not a telehealth clinic. This is a research cohort.
         </p>
+
+        <div className="text-center pt-8 border-t border-border">
+          <p className="text-lg text-stone">
+            Not ready for a full 12-week research cohort? →{" "}
+            <a
+              href="/consult"
+              className="text-ink hover:text-accent transition-colors underline"
+            >
+              Book a Peptide Optimization Consult
+            </a>
+          </p>
+        </div>
       </div>
     </section>
   );

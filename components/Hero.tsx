@@ -15,19 +15,33 @@ export default function Hero() {
           Join the first compliant framework for responsible human research on BPC-157, TB-500, Semax & Selank.
         </p>
 
-        {/* Single CTA - minimal, confident */}
-        <a
-          href="#apply"
-          className="
-            inline-block px-10 py-4
-            bg-ink text-whisper
-            text-xs tracking-[0.2em] uppercase
-            hover:bg-stone
-            transition-colors duration-300
-          "
-        >
-          → Apply for Cohort
-        </a>
+        {/* Primary and Secondary CTAs */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a
+            href="#apply"
+            className="
+              inline-block px-10 py-4
+              bg-ink text-whisper
+              text-xs tracking-[0.2em] uppercase
+              hover:bg-stone
+              transition-colors duration-300
+            "
+          >
+            → Apply for Cohort
+          </a>
+          <a
+            href="https://cal.com/jesse-schmidt/peptide-consult"
+            className="
+              inline-block px-10 py-4
+              border-2 border-ink text-ink bg-transparent
+              text-xs tracking-[0.2em] uppercase
+              hover:bg-ink hover:text-whisper
+              transition-colors duration-300
+            "
+          >
+            Book a Consult
+          </a>
+        </div>
       </div>
     </section>
   )
