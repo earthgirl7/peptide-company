@@ -57,16 +57,18 @@ export default function ApplicationForm() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // TODO: Replace with your Airtable API endpoint
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500))
+      const response = await fetch('/api/submit-application', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      })
 
-      // Real Airtable submission would go here:
-      // const response = await fetch('/api/submit-application', {
-      //   method: 'POST',
-      //   body: JSON.stringify(formData)
-      // })
+      if (!response.ok) {
+        throw new Error('Submission failed')
+      }
 
       setIsSuccess(true)
     } catch (error) {
