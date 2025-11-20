@@ -30,7 +30,7 @@ export default function Hero() {
             → Apply for Cohort
           </a>
           <a
-            href="https://cal.com/jesse-schmidt/peptide-consult"
+            href="/consult"
             className="
               inline-block px-10 py-4
               border-2 border-ink text-ink bg-transparent
