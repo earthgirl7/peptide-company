@@ -30,14 +30,14 @@ export async function POST(request: Request) {
         Name: formData.name,
         Email: formData.email,
         Location: formData.location,
-        Compounds: formData.compounds.join(', '),
+        Compounds: formData.compounds, // Send as array for Multiple Select field
         Goals: formData.goals,
         Experience: formData.experience || '',
         Background: formData.background || '',
         Referral: formData.referral || '',
-        'Consent Given': formData.consent,
-        'Budget Confirmed': formData.budget,
-        'Submitted At': new Date().toISOString(),
+        'Consent given': formData.consent, // Fixed capitalization
+        'Budget confirmed': formData.budget, // Fixed capitalization
+        // Note: 'Submitted at' is auto-filled by Airtable (createdTime field)
       },
     };
 
