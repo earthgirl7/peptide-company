@@ -3,11 +3,18 @@ import { NextResponse } from 'next/server';
 export async function POST(request: Request) {
   try {
     const formData = await request.json();
+    console.log('Received form data:', formData);
 
     // Airtable configuration
     const AIRTABLE_API_KEY = process.env.AIRTABLE_API_KEY;
     const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID;
     const AIRTABLE_TABLE_NAME = process.env.AIRTABLE_TABLE_NAME || 'Applications';
+
+    console.log('Airtable config:', {
+      hasApiKey: !!AIRTABLE_API_KEY,
+      baseId: AIRTABLE_BASE_ID,
+      tableName: AIRTABLE_TABLE_NAME
+    });
 
     if (!AIRTABLE_API_KEY || !AIRTABLE_BASE_ID) {
       console.error('Missing Airtable configuration');
@@ -49,9 +56,10 @@ export async function POST(request: Request) {
 
     if (!airtableResponse.ok) {
       const errorData = await airtableResponse.json();
-      console.error('Airtable error:', errorData);
+      console.error('Airtable API error response:', JSON.stringify(errorData, null, 2));
+      console.error('Status:', airtableResponse.status);
       return NextResponse.json(
-        { error: 'Failed to submit application' },
+        { error: 'Failed to submit application', details: errorData },
         { status: 500 }
       );
     }

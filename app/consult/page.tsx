@@ -411,15 +411,6 @@ export default function ConsultPage() {
         </div>
       </section>
 
-      {/* Copyright Footer */}
-      <section className="py-8 px-6 md:px-8 bg-whisper border-t border-border">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-sm text-stone">
-            © 2025 Peptide Company. All rights reserved.
-          </p>
-        </div>
-      </section>
-
       <Footer />
     </main>
   );

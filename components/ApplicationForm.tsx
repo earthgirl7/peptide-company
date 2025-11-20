@@ -67,6 +67,8 @@ export default function ApplicationForm() {
       })
 
       if (!response.ok) {
+        const errorData = await response.json()
+        console.error('API Error Response:', errorData)
         throw new Error('Submission failed')
       }
 
