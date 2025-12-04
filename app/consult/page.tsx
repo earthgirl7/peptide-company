@@ -18,7 +18,7 @@ export default function ConsultPage() {
           </p>
 
           <a
-            href="https://cal.com/jesse-schmidt/peptide-consult"
+            href="https://tally.so/r/xXXx7v"
             className="
               inline-block px-10 py-4
               bg-ink text-whisper
@@ -214,7 +214,7 @@ export default function ConsultPage() {
           </ul>
 
           <a
-            href="https://cal.com/jesse-schmidt/peptide-consult"
+            href="https://tally.so/r/xXXx7v"
             className="
               inline-block px-10 py-4
               bg-ink text-whisper
